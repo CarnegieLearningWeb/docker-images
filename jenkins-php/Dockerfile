@@ -6,5 +6,9 @@ FROM php:7.4.7
 RUN mkdir -p /usr/share/man/man1 && \
     apt update && \
     apt install -y openjdk-11-jre git
-    
-RUN pear install PHP_CodeSniffer-3.5.5
+
+RUN curl -sS https://getcomposer.org/installer | php && \
+    php composer.phar require pheromone/phpcs-security-audit && \
+    sh vendor/pheromone/phpcs-security-audit/symlink.sh
+
+ENV PATH="/vendor/bin:${PATH}"
