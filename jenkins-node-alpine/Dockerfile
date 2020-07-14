@@ -18,6 +18,7 @@ RUN apk --allow-untrusted --no-cache -U add \
     openjdk8 \
     openssh-client \
     mysql-client \
+    perl \
     py-pip \
     python2 \
     python3 \
