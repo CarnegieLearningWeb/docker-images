@@ -5,11 +5,6 @@ USER root
 RUN apt-get -y update
 RUN apt-get -y install software-properties-common git python3 python3-pip wget python-is-python3 unzip curl
 
-# install java so jenkins can use this as a worker node
-RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add -
-RUN add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
-RUN apt-get -y update && apt-get -y install adoptopenjdk-8-hotspot
-
 # set display port to avoid crash
 ENV DISPLAY=:99
 
