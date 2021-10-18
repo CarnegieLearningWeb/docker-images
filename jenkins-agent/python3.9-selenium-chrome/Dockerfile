@@ -2,8 +2,8 @@ FROM jenkins/inbound-agent:latest
 
 USER root
 
-RUN apt-get -y update
-RUN apt-get -y install software-properties-common git python3 python3-pip wget python-is-python3 unzip curl
+RUN apt-get -y update && \
+    apt-get -y install software-properties-common git python3 python3-pip wget python-is-python3 unzip curl
 
 # set display port to avoid crash
 ENV DISPLAY=:99
